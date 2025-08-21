@@ -18,3 +18,7 @@ select s.CompanyName,o.OrderID from Orders as o join Shippers as s  on s.Shipper
 select e.EmployeeID ,e.FirstName,o.OrderID from Employees as e join [Orders] as o on e.EmployeeID=o.EmployeeID order by EmployeeID
 
 select p.ProductID,p.ProductName,s.City,s.Country from Products as p join Suppliers as s on p.SupplierID=s.SupplierID
+
+select CompanyName,count(*) from Orders as o join Shippers as s on o.ShipVia = s.ShipperID group by CompanyName
+
+select p.ProductID,p.ProductName,sum(quantity) as จำนวนที่ขายได้ทั้งหมด   from  Products as p join [Order Details] as o on p.ProductID=o.ProductID group by p.ProductID,p.ProductName order by 1
