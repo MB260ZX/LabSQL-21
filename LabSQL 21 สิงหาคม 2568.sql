@@ -13,3 +13,8 @@ select p.ProductID, p.ProductName ,s.CompanyName,s.Country from Products as p jo
 select s.CompanyName,o.OrderID from Orders as o ,Shippers as s where s.ShipperID=o.ShipVia and OrderID = 10275
 
 select s.CompanyName,o.OrderID from Orders as o join Shippers as s  on s.ShipperID=o.ShipVia where OrderID = 10275
+
+--แบบฝึกหัด
+select e.EmployeeID ,e.FirstName,o.OrderID from Employees as e join [Orders] as o on e.EmployeeID=o.EmployeeID order by EmployeeID
+
+select p.ProductID,p.ProductName,s.City,s.Country from Products as p join Suppliers as s on p.SupplierID=s.SupplierID
